@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon</title>
+  <title>Loading...</title>
   <style>
     body {
-      margin: 0;
-      background-color: #000;
+      background-color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
-
     img {
-      max-width: 90%;
-      height: auto;
+      width: 250px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <img src="thqat_logo.jpeg" alt="Coming Soon">
+  <img src="thqat_logo.jpeg" alt="Loading">
 </body>
 </html>
-
