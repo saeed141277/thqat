@@ -23,7 +23,7 @@
     }
 
     img {
-      width: 350px;
+      width: 450px;
       animation: pulse 2s ease-in-out infinite;
     }
 
@@ -34,9 +34,9 @@
     }
 
     .progress {
-      margin-top: 25px;
-      width: 220px;
-      height: 6px;
+      margin-top: 35px;
+      width: 300px;
+      height: 8px;
       background-color: #e0e0e0;
       border-radius: 10px;
       overflow: hidden;
@@ -46,11 +46,19 @@
     .progress-bar {
       width: 0%;
       height: 100%;
-      background-color: #000000; /* شريط أسود */
-      animation: loading 3s ease-in-out infinite;
+      background-color: #000000;
+      border-radius: 10px;
+      animation: initialLoad 4s ease-in-out forwards, loopLoad 3s ease-in-out infinite 4s;
     }
 
-    @keyframes loading {
+    /* أول مرة تعبئة تدريجية */
+    @keyframes initialLoad {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    /* بعدين حركة تكرارية */
+    @keyframes loopLoad {
       0% { width: 0%; }
       50% { width: 100%; }
       100% { width: 0%; }
