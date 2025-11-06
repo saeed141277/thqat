@@ -16,7 +16,6 @@
     }
 
     .logo-container {
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -36,32 +35,29 @@
     .progress {
       margin-top: 35px;
       width: 300px;
-      height: 8px;
+      height: 10px;
+      position: relative;
       background-color: #e0e0e0;
-      border-radius: 10px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 0 4px rgba(0,0,0,0.1);
     }
 
-    .progress-bar {
-      width: 0%;
-      height: 100%;
+    .dot {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 14px;
+      height: 14px;
       background-color: #000000;
-      border-radius: 10px;
-      animation: initialLoad 4s ease-in-out forwards, loopLoad 3s ease-in-out infinite 4s;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      animation: moveDot 2s ease-in-out infinite;
     }
 
-    /* أول مرة تعبئة تدريجية */
-    @keyframes initialLoad {
-      0% { width: 0%; }
-      100% { width: 100%; }
-    }
-
-    /* بعدين حركة تكرارية */
-    @keyframes loopLoad {
-      0% { width: 0%; }
-      50% { width: 100%; }
-      100% { width: 0%; }
+    @keyframes moveDot {
+      0% { left: 0; }
+      50% { left: 50%; }
+      100% { left: 0; }
     }
   </style>
 </head>
@@ -69,7 +65,7 @@
   <div class="logo-container">
     <img src="thqat_logo.jpeg" alt="Loading">
     <div class="progress">
-      <div class="progress-bar"></div>
+      <div class="dot"></div>
     </div>
   </div>
 </body>
